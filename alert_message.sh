@@ -1,4 +1,4 @@
-adminNumber="+919829362452"
+adminNumber="+91/////////"
 while :
 do
 	
