@@ -1,0 +1,15 @@
+FROM redhat/ubi9
+
+RUN yum install python3 -y
+
+RUN yum install python3-pip -y
+
+RUN pip3 install flask
+
+RUN pip3 install flask-mysql
+
+WORKDIR /myapp
+
+COPY app.py lokesh.py
+
+ENTRYPOINT ["python3", "lokesh.py"]
