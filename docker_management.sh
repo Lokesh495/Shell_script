@@ -1,55 +1,46 @@
 #!/bin/bash
 
 # Docker Management Shell Script
-
-# Function to list all containers
 list_containers() {
     echo "Listing all containers:"
     docker ps -a
 }
 
-# Function to start a container
 start_container() {
     read -p "Enter container name or ID to start: " container
     docker start "$container"
     echo "Container '$container' started."
 }
 
-# Function to stop a container
 stop_container() {
     read -p "Enter container name or ID to stop: " container
     docker stop "$container"
     echo "Container '$container' stopped."
 }
 
-# Function to restart a container
 restart_container() {
     read -p "Enter container name or ID to restart: " container
     docker restart "$container"
     echo "Container '$container' restarted."
 }
 
-# Function to remove a container
 remove_container() {
     read -p "Enter container name or ID to remove: " container
     docker rm "$container"
     echo "Container '$container' removed."
 }
 
-# Function to view logs of a container
 view_logs() {
     read -p "Enter container name or ID to view logs: " container
     docker logs "$container"
 }
 
-# Function to execute a command in a container
 exec_command() {
     read -p "Enter container name or ID: " container
     read -p "Enter the command to execute: " command
     docker exec -it "$container" $command
 }
 
-# Function to display menu
 show_menu() {
     echo "========================="
     echo "🐳 Docker Management Menu"
